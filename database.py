@@ -1,0 +1,41 @@
+"""Backward-compatible database wrapper."""
+
+from customer_support_agent.repositories.sqlite import (
+    CustomersRepository,
+    DraftsRepository,
+    TicketsRepository,
+    count_open_tickets_for_customer,
+    create_draft,
+    create_or_get_customer,
+    create_ticket,
+    get_customer_by_email,
+    get_customer_by_id,
+    get_draft_by_id,
+    get_latest_draft_for_ticket,
+    get_ticket_and_customer_by_draft,
+    get_ticket_by_id,
+    init_db,
+    list_tickets,
+    set_ticket_status,
+    update_draft,
+)
+
+__all__ = [
+    "CustomersRepository",
+    "TicketsRepository",
+    "DraftsRepository",
+    "init_db",
+    "create_or_get_customer",
+    "get_customer_by_id",
+    "get_customer_by_email",
+    "create_ticket",
+    "list_tickets",
+    "get_ticket_by_id",
+    "set_ticket_status",
+    "create_draft",
+    "get_latest_draft_for_ticket",
+    "get_draft_by_id",
+    "update_draft",
+    "get_ticket_and_customer_by_draft",
+    "count_open_tickets_for_customer",
+]
