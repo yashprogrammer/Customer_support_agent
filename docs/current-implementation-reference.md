@@ -1,6 +1,6 @@
 # Current Implementation Reference
 
-Last updated: 2026-02-20
+Last updated: 2026-02-25
 Workspace: `/Users/yashpatil/Developer/AI/LangChain/Customer_support_agent`
 Branch: `codex/modular-backend-refactor`
 
@@ -28,7 +28,7 @@ It supports full flow:
 
 ### Entry points
 
-- Backend runtime entrypoint (compat wrapper): `main.py`
+- Backend runtime entrypoint: `main.py`
 - Backend primary app factory: `customer_support_agent/api/app_factory.py`
 - Dashboard: `app.py`
 
@@ -55,9 +55,9 @@ It supports full flow:
 - `customer_support_agent/services/draft_service.py`: draft persistence/serialization workflow
 - `customer_support_agent/services/knowledge_service.py`: knowledge ingest facade
 
-Compatibility wrappers preserved at repo root:
+Root runtime entrypoint:
 
-- `config.py`, `models.py`, `rag.py`, `memory.py`, `tools.py`, `database.py`, `copilot.py`, `main.py`
+- `main.py`
 
 ## 3) Data model (SQLite)
 
@@ -232,7 +232,6 @@ Path-related settings:
 - File: `tests/test_api_flow.py`
 - File: `tests/test_memory_scopes.py`
 - File: `tests/test_app_factory.py`
-- File: `tests/test_wrapper_compat.py`
 - Run: `uv run pytest -q`
 - Covers:
   - ticket -> draft -> accept flow
@@ -241,7 +240,6 @@ Path-related settings:
   - failed background draft when copilot unavailable
   - company-scoped memory key normalization/dedupe behavior
   - app factory route registration and health endpoint
-  - root wrapper import compatibility guarantees
 
 ### Single-script RAG+Memory demo
 

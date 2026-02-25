@@ -8,7 +8,6 @@ import sys
 
 import pytest
 from fastapi.testclient import TestClient
-import config as config_module
 import customer_support_agent.core.settings as package_settings_module
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -146,7 +145,6 @@ def env_setup(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
 
 @pytest.fixture()
 def client_with_fake_copilot(env_setup, monkeypatch: pytest.MonkeyPatch):
-    config_module.get_settings.cache_clear()
     package_settings_module.get_settings.cache_clear()
 
     import main as main_module
@@ -166,7 +164,6 @@ def client_with_fake_copilot(env_setup, monkeypatch: pytest.MonkeyPatch):
 
 @pytest.fixture()
 def client_with_failing_copilot(env_setup, monkeypatch: pytest.MonkeyPatch):
-    config_module.get_settings.cache_clear()
     package_settings_module.get_settings.cache_clear()
 
     import main as main_module

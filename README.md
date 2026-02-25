@@ -34,7 +34,7 @@ Primary backend code now lives in the package:
 - `customer_support_agent/services` (copilot + workflows)
 - `customer_support_agent/api` (dependencies, routers, app factory)
 
-Root files like `main.py`, `config.py`, `database.py`, etc. are compatibility wrappers to keep existing commands/imports stable.
+Root entrypoints are `main.py` (API runtime) and `app.py` (dashboard).
 
 ## Prerequisites
 
